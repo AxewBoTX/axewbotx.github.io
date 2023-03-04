@@ -1,10 +1,13 @@
-import './App.css';
+import {
+	Container
+} from '@chakra-ui/react';
+import Navbar from './components/navbar.js'
 
 function App() {
   return (
-    <div className="App">
-	  <h1>Welcome!</h1>
-    </div>
+	  <Container maxW='container.md' bg='red'>
+	  <Navbar/>
+	  </Container>
   );
 }
 
