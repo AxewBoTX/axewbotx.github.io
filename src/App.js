@@ -5,7 +5,7 @@ import Navbar from './components/navbar.js'
 
 function App() {
   return (
-	  <Container maxW='container.md' bg='red'>
+	  <Container>
 	  <Navbar/>
 	  </Container>
   );

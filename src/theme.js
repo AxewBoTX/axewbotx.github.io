@@ -10,7 +10,8 @@ const styles = {
 }
 const fonts = {
 	heading: "'M PLUS ROUNDED 1c",
-	body: "'M PLUS ROUNDED 1c",
+	body: "'M PLUS ROUNDED 1c'",
+	text: "'M PLUS ROUNDED 1c'"  
 }
 const config = {
 	initialColorMode: 'dark',
