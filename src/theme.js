@@ -8,11 +8,15 @@ const styles = {
     }
   })
 }
+const fonts = {
+	heading: `"M PLUS Rounded 1c", sans-serif`,
+	body: `"M PLUS Rounded 1c", sans-serif`
+}
 const config = {
   initialColorMode: 'dark',
   useSystemColorMode: true
 }
 
-const theme = extendTheme({styles,config});
+const theme = extendTheme({styles,fonts,config});
 
 export default theme;
