@@ -11,14 +11,11 @@ const styles = {
 const fonts = {
 	heading: "'M PLUS ROUNDED 1c",
 	body: "'M PLUS ROUNDED 1c'",
-	text: "'M PLUS ROUNDED 1c'"  
 }
 const config = {
 	initialColorMode: 'dark',
 }
 
-const theme = extendTheme({
-	styles, fonts, config
-})
+const theme = extendTheme({styles, fonts, config})
 
 export default theme
