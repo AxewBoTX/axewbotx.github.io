@@ -1,12 +1,9 @@
-import {
-	Container
-} from '@chakra-ui/react';
-import Navbar from './components/navbar.js'
+import {Container} from '@chakra-ui/react';
 
 function App() {
   return (
 	  <Container>
-	  <Navbar/>
+	  Welcome!
 	  </Container>
   );
 }

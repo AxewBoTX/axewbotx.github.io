@@ -1,22 +1,21 @@
 {
-  "short_name": "Axew's Living Room",
-  "name": "Axew's Personal Website",
-  "description": "This Is Axew's Personal Website",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
-      "src": "assets/logo.ico",
-      "sizes": "32x32",
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "assets/logo.png",
+      "src": "logo192.png",
       "type": "image/png",
-      "sizes": "220x220"
+      "sizes": "192x192"
     },
     {
-      "src": "assets/logo.png",
+      "src": "logo512.png",
       "type": "image/png",
-      "sizes": "220x220"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",

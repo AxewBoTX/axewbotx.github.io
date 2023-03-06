@@ -2127,11 +2127,6 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.35.0.tgz#b7569632b0b788a0ca0e438235154e45d42813a7"
   integrity sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==
 
-"@fontsource/m-plus-rounded-1c@^4.5.10":
-  version "4.5.10"
-  resolved "https://registry.yarnpkg.com/@fontsource/m-plus-rounded-1c/-/m-plus-rounded-1c-4.5.10.tgz#d98c7df36bd593bd44bc6060c3d8afecffb52d55"
-  integrity sha512-spzDBo7ni2QyY0XaTKtu97juLq9cFgWSIQ2OpP2nAd++WCaKu1KFsobWCpSqRbBJhPXdMrbanRprcslYI6EeRg==
-
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
@@ -2935,9 +2930,9 @@
   integrity sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==
 
 "@types/node@*":
-  version "18.14.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.4.tgz#0e64ec0b35a772e1e3d849f9a0ff61782d0cb647"
-  integrity sha512-VhCw7I7qO2X49+jaKcAUwi3rR+hbxT5VcYF493+Z5kMLI0DL568b7JI4IDJaxWFH0D/xwmGJNoXisyX+w7GH/g==
+  version "18.14.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.6.tgz#ae1973dd2b1eeb1825695bb11ebfb746d27e3e93"
+  integrity sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -3947,9 +3942,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001426, caniuse-lite@^1.0.30001449:
-  version "1.0.30001458"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001458.tgz#871e35866b4654a7d25eccca86864f411825540c"
-  integrity sha512-lQ1VlUUq5q9ro9X+5gOEyH7i3vm+AYVT1WDCVB69XOZ17KZRhnZ9J0Sqz7wTHQaLBJccNCHq8/Ww5LlOIZbB0w==
+  version "1.0.30001460"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001460.tgz#31d2e26f0a2309860ed3eff154e03890d9d851a7"
+  integrity sha512-Bud7abqjvEjipUkpLs4D7gR0l8hBYBHoa+tGtKJHvT2AYzLp1z7EmVkUT4ERpVUfca8S2HGIVs883D8pUH1ZzQ==
 
 case-sensitive-paths-webpack-plugin@^2.4.0:
   version "2.4.0"
@@ -4785,9 +4780,9 @@ ejs@^3.1.6:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.284:
-  version "1.4.315"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.315.tgz#b60a6676b3a1db332cfc8919118344aa06b9ac99"
-  integrity sha512-ndBQYz3Eyy3rASjjQ9poMJGoAlsZ/aZnq6GBsGL4w/4sWIAwiUHVSsMuADbxa8WJw7pZ0oxLpGbtoDt4vRTdCg==
+  version "1.4.320"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.320.tgz#4d83a90ff74f93939c5413c2ac5a16c696600632"
+  integrity sha512-h70iRscrNluMZPVICXYl5SSB+rBKo22XfuIS1ER0OQxQZpKTnFpuS6coj7wY9M/3trv7OR88rRMOlKmRvDty7Q==
 
 email-addresses@^5.0.0:
   version "5.0.0"
@@ -5513,9 +5508,9 @@ for-each@^0.3.3:
     is-callable "^1.1.3"
 
 fork-ts-checker-webpack-plugin@^6.5.0:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.5.2.tgz#4f67183f2f9eb8ba7df7177ce3cf3e75cdafb340"
-  integrity sha512-m5cUmF30xkZ7h4tWUgTAcEaKmUW7tfyUyTqNNOz7OxWJ0v1VWKTcOvH8FWHUwSjlW/356Ijc9vi3XfcPstpQKA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.5.3.tgz#eda2eff6e22476a2688d10661688c47f611b37f3"
+  integrity sha512-SbH/l9ikmMWycd5puHJKTkZJKddF4iRLyW3DeZ08HTI7NGyLS38MXd/KGgeWumQO7YNQbW2u/NtPT2YowbPaGQ==
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@types/json-schema" "^7.0.5"
@@ -5551,9 +5546,9 @@ fraction.js@^4.2.0:
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
 framer-motion@^10.0.1:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.0.1.tgz#62cadfb9ed80599ac9b1c1699dc4e1164c3133c5"
-  integrity sha512-/N7gBA9gH8PkStyNQ67P/lx8UhL/7Y8z9Ku7FfgOF77sSG8wu8781kX7I5ZUgflRRtQXo8qH4Rev23004G1zcQ==
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.0.2.tgz#386ad9fef138d625740e8338715e5f2568ae9951"
+  integrity sha512-1k8y1e6DMRQ/r6or4TBxRhE1cXlDE5bm+SFeWLeh7ng0sfSbpROC2Qd1OEHq6lLXNARar/KKoj/EQ6eIvn60Uw==
   dependencies:
     tslib "^2.4.0"
   optionalDependencies:
@@ -7143,9 +7138,9 @@ levn@~0.3.0:
     type-check "~0.3.2"
 
 lilconfig@^2.0.3, lilconfig@^2.0.5, lilconfig@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.6.tgz#32a384558bd58af3d4c6e077dd1ad1d397bc69d4"
-  integrity sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.1.0.tgz#78e23ac89ebb7e1bfbf25b18043de756548e7f52"
+  integrity sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==
 
 lines-and-columns@^1.1.6:
   version "1.2.4"
@@ -7257,9 +7252,9 @@ lru-cache@^6.0.0:
     yallist "^4.0.0"
 
 lz-string@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.4.4.tgz#c0d8eaf36059f705796e1e344811cf4c498d3a26"
-  integrity sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.5.0.tgz#c1ab50f77887b712621201ba9fd4e3a6ed099941"
+  integrity sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==
 
 magic-string@^0.25.0, magic-string@^0.25.7:
   version "0.25.9"
