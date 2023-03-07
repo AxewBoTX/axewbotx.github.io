@@ -8,6 +8,10 @@ const styles = {
     }
   })
 }
+const colors = {
+	light: '#f0e7db',
+	dark: '#202023'
+}
 const fonts = {
 	heading: `"M PLUS Rounded 1c", sans-serif`,
 	body: `"M PLUS Rounded 1c", sans-serif`
@@ -17,6 +21,6 @@ const config = {
   useSystemColorMode: true
 }
 
-const theme = extendTheme({styles,fonts,config});
+const theme = extendTheme({styles,colors,fonts,config});
 
 export default theme;
