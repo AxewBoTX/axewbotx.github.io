@@ -2,7 +2,7 @@ import {Box} from '@chakra-ui/react';
 
 function Home(){
 	return (
-		<Box height="2000px">
+		<Box>
 		Home
 		</Box>
 	);

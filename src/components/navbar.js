@@ -1,5 +1,5 @@
 import {
-	IconButton,Flex,Container,Link,
+	IconButton,Flex,Container,Link,Stack,
 	Menu,MenuButton,MenuList,MenuItem,
 } from '@chakra-ui/react';
 import {useState,useEffect} from 'react';
@@ -7,6 +7,7 @@ import {Link as RouteLink} from 'react-router-dom';
 import Logo from './logo.js';
 import ThemeButton from './themeButton.js';
 import {HamburgerIcon} from '@chakra-ui/icons';
+import {FaGithub} from 'react-icons/fa';
 
 function SmallNavbar(){
 	return (
@@ -26,6 +27,10 @@ function SmallNavbar(){
 		<MenuItem><Link as={RouteLink} to="/">About</Link></MenuItem>
 		<MenuItem><Link as={RouteLink} to="/posts">Posts</Link></MenuItem>
 		<MenuItem><Link as={RouteLink} to="/contact">Contact</Link></MenuItem>
+		<MenuItem>
+		<Link 
+		as={RouteLink} to="https://github.com/AxewBoTX/axewbotx.github.io">View Source</Link>
+		</MenuItem>
 		</MenuList>
 		</Menu>
 		</Flex>
@@ -34,11 +39,18 @@ function SmallNavbar(){
 }
 function BigNavbar(){
 	return (
-		<Flex
-		justifyContent="space-between"
-		alignItems="center"
-		>
+		<Flex align="center" justify="space-between">
+		<Flex justify="center" align="baseline" gap="30px">
 		<Logo/>
+		<Stack direction="row" gap="20px" fontSize="20px">
+		<Link as={RouteLink} to="/posts">Posts</Link>
+		<Link as={RouteLink} to="/contact">Contact</Link>
+		<Link 
+		display="flex" justifyContent="center" alignItems="center" gap="4px" 
+		as={RouteLink} to="https://github.com/AxewBoTX/axewbotx.github.io"
+		><FaGithub/>Source</Link>
+		</Stack>
+		</Flex>
 		<ThemeButton/>
 		</Flex>
 	);
