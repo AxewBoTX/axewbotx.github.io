@@ -13,7 +13,8 @@ const components = {
 		variants:{
 			'section-title': {
 				textDecoration:"underline",
-				fontSize:"20px",
+				fontSize:"30px",
+				marginBottom: "8px",
 				textUnderlineOffset:6,
 				textDecorationColor: '#525252',
 				textDecorationThickness: 4,

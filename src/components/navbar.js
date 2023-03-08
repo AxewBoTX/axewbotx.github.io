@@ -1,6 +1,6 @@
 import {
 	IconButton,Flex,Container,Link,Stack,
-	Menu,MenuButton,MenuList,MenuItem,
+	Menu,MenuButton,MenuList,MenuItem
 } from '@chakra-ui/react';
 import {useState,useEffect} from 'react';
 import {Link as RouteLink} from 'react-router-dom';
@@ -24,9 +24,9 @@ function SmallNavbar(){
 		border="1px" borderColor="gray"
 		/>
 		<MenuList>
-		<MenuItem><Link as={RouteLink} to="/">About</Link></MenuItem>
-		<MenuItem><Link as={RouteLink} to="/posts">Posts</Link></MenuItem>
-		<MenuItem><Link as={RouteLink} to="/contact">Contact</Link></MenuItem>
+		<Link as={RouteLink} to="/"><MenuItem>About</MenuItem></Link>
+		<Link as={RouteLink} to="/posts"><MenuItem>Posts</MenuItem></Link>
+		<Link as={RouteLink} to="/contact"><MenuItem>Contact</MenuItem></Link>
 		<MenuItem>
 		<Link 
 		as={RouteLink} to="https://github.com/AxewBoTX/axewbotx.github.io">View Source</Link>
