@@ -8,7 +8,7 @@ import Contact from './pages/contact.js';
 function App() {
   return (
 	  <Container maxW="100%" m="0" p="0">
-	  <Flex position="sticky" top="0" right="0" left="0"
+	  <Flex position="sticky" top="0" right="0" left="0" mb="60px"
 	  bg={useColorModeValue('#ffffff40','#20202480')}
 	  style={{backdropFilter: 'blur(20px)'}}
 	  zIndex={1}

@@ -9,7 +9,7 @@ function Logo(){
 		fontSize="35px"
 		textDecoration="none"
 		_hover={{textDecoration: "none"}}
-		>AxewBoTX</Link>
+		>Axew</Link>
 		</Box>
 	);
 }

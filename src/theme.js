@@ -8,6 +8,19 @@ const styles = {
     }
   })
 }
+const components = {
+	Heading:  {
+		variants:{
+			'section-title': {
+				textDecoration:"underline",
+				fontSize:"20px",
+				textUnderlineOffset:6,
+				textDecorationColor: '#525252',
+				textDecorationThickness: 4,
+			}
+		}
+	}
+}
 const colors = {
 	light: '#f0e7db',
 	dark: '#202023'
@@ -21,6 +34,6 @@ const config = {
   useSystemColorMode: true
 }
 
-const theme = extendTheme({styles,colors,fonts,config});
+const theme = extendTheme({styles,components,colors,fonts,config});
 
 export default theme;
