@@ -1,8 +1,8 @@
 import {
 	Container,Heading,Text,Link,useColorModeValue,
 } from '@chakra-ui/react';
-import Footer from '../components/footer.js';
-import WebProfiles from '../components/web_profiles.js';
+import Footer from './footer.js';
+import WebProfiles from './web_profiles.js';
 
 function About(){
 	return (
