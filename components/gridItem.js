@@ -1,21 +1,21 @@
 import {
-	Box,Text,LinkBox,LinkOverlay,Image
+	Box,Text,LinkBox,LinkOverlay,Image,Global
 } from '@chakra-ui/react';
 
-function GridItem(props){
+function GridItem({children,href,thumbnail,title}){
 	return (
 		<Box w="100%" align="center">
 		<LinkBox cursor="pointer">
 		<Image 
-		alt={props.title}
+		alt={title}
 		placeholder="blue"
 		loading="lazy"
 		borderRadius="12px"
-		src={props.thumbnail}/>
-		<LinkOverlay href={props.href} target="_blank">
-		<Text mt={2}>{props.title}</Text>
+		src={thumbnail}/>
+		<LinkOverlay href={href} target="_blank">
+		<Text mt={2}>{title}</Text>
 		</LinkOverlay>
-		<Text fontSize="14">{props.children}</Text>
+		<Text fontSize="14">{children}</Text>
 		</LinkBox>
 		</Box>
 	);

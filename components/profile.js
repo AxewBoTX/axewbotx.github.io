@@ -10,11 +10,12 @@ function Profile(){
 		<Text maxW="210px">Just a random guy who loves coding</Text>
 		</Flex>
 		<Image 
+		alt="Axew's Profile Picture"
 		boxSize="120px"
 		borderRadius="full"
 		border="2px"
 		borderColor={"gray"}
-		src="assets/profile.png"/>
+		src="/profile.png"/>
 		</Flex>
 	);
 }

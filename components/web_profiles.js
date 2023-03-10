@@ -2,6 +2,7 @@ import {
 	Box,Heading,Flex,useColorModeValue,Button
 } from "@chakra-ui/react";
 import {FaYoutube,FaTwitch,FaTwitter,FaGithub} from 'react-icons/fa';
+import Section from './section.js';
 
 function ProfileButton(props){
 	const fore = useColorModeValue('light','dark');
@@ -28,9 +29,11 @@ function WebProfiles(){
 	const github_bg = useColorModeValue('#385898','#b7c2da');
 	return (
 		<Box mt="20px" mb="40px">
+		<Section delay={0.1}>
 		<Heading variant="section-title" mt="30px">
 		Web Profiles
 		</Heading>
+		</Section>
 		<Flex justify="center" direction="column" align="flex-start" gap="10px"
 		mt="20px"
 		>

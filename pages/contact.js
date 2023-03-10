@@ -4,14 +4,21 @@ import {
 import {
     FaYoutube,FaTwitter,FaTwitch,FaGithub,FaDiscord,FaFacebook
 } from 'react-icons/fa';
-import SocialButton from '../components/socialButton.js';
+import SocialButton from 'components/socialButton.js';
+import MainLayout from '/lib/main.js';
+import Section from '/components/section.js';
+import Layout from '/lib/layout.js';
 
 function Contact(){
 	return (
+		<MainLayout>
+		<Layout>
 		<Container maxW="container.sm" mt="120px" maxH="792px" mb="50px">
+		<Section delay={0.1}>
 		<Heading variant="section-title">
 		Contact
 		</Heading>
+		</Section>
 		<Text fontSize="25px" maxW="580px" align="center" mt="50px">
 		You can find me on most social media platforms.
 		Feel free to join our Discord or tweet at me!
@@ -49,6 +56,8 @@ function Contact(){
 		colorScheme="facebook"/>
 		</Stack>
 		</Container>
+		</Layout>
+		</MainLayout>
 	);
 }
 

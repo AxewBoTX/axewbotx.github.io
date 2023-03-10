@@ -3,7 +3,7 @@ import {
 	Menu,MenuButton,MenuList,MenuItem
 } from '@chakra-ui/react';
 import {useState,useEffect} from 'react';
-import {Link as RouteLink} from 'react-router-dom';
+import {default as RouteLink} from 'next/link';
 import Logo from './logo.js';
 import ThemeButton from './themeButton.js';
 import {HamburgerIcon} from '@chakra-ui/icons';
@@ -24,12 +24,12 @@ function SmallNavbar(){
 		border="1px" borderColor="gray"
 		/>
 		<MenuList>
-		<Link as={RouteLink} to="/"><MenuItem>About</MenuItem></Link>
-		<Link as={RouteLink} to="/posts"><MenuItem>Posts</MenuItem></Link>
-		<Link as={RouteLink} to="/contact"><MenuItem>Contact</MenuItem></Link>
+		<Link as={RouteLink} href="/"><MenuItem>About</MenuItem></Link>
+		<Link as={RouteLink} href="/posts"><MenuItem>Posts</MenuItem></Link>
+		<Link as={RouteLink} href="/contact"><MenuItem>Contact</MenuItem></Link>
 		<MenuItem>
 		<Link 
-		as={RouteLink} to="https://github.com/AxewBoTX/axewbotx.github.io">View Source</Link>
+		as={RouteLink} href="https://github.com/AxewBoTX/axewbotx.github.io">View Source</Link>
 		</MenuItem>
 		</MenuList>
 		</Menu>
@@ -43,11 +43,11 @@ function BigNavbar(){
 		<Flex justify="center" align="baseline" gap="30px">
 		<Logo/>
 		<Stack direction="row" gap="20px" fontSize="20px">
-		<Link as={RouteLink} to="/posts">Posts</Link>
-		<Link as={RouteLink} to="/contact">Contact</Link>
+		<Link as={RouteLink} href="/posts">Posts</Link>
+		<Link as={RouteLink} href="/contact">Contact</Link>
 		<Link 
 		display="flex" justifyContent="center" alignItems="center" gap="4px" 
-		as={RouteLink} to="https://github.com/AxewBoTX/axewbotx.github.io"
+		as={RouteLink} href="https://github.com/AxewBoTX/axewbotx.github.io"
 		><FaGithub/>Source</Link>
 		</Stack>
 		</Flex>
@@ -57,7 +57,10 @@ function BigNavbar(){
 }
 
 function Navbar(){
-	const [width,setWidth] = useState(window.innerWidth);
+	const [width,setWidth] = useState();
+	useEffect(function(){
+		setWidth(window.innerWidth);
+	},[]);
 	useEffect(function(){
 		function handleWindowResize(){
 			setWidth(window.innerWidth);
