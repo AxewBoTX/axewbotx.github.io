@@ -24,7 +24,7 @@ function Contact() {
             You can find me on most social media platforms. Feel free to join
             our Discord or tweet at me!
           </Text>
-          <Stack direction="column" align="center" gap="10px" mt="80px">
+          <Stack direction="column" align="center" gap="18px" mt="80px">
             <SocialButton
               text="YouTube"
               icon={<FaYoutube />}

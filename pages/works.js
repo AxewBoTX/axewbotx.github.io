@@ -2,6 +2,7 @@ import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import MainLayout from "/lib/main";
 import Section from "components/section.js";
 import Layout from "lib/layout.js";
+import GridItem from "/components/gridItem";
 
 function Works() {
   return (
@@ -13,7 +14,15 @@ function Works() {
               My Projects
             </Heading>
           </Section>
-          <SimpleGrid columns={[1, 2, 2]} gap="6" mt="50px"></SimpleGrid>
+          <SimpleGrid columns={[1, 2, 2]} gap="6" mt="50px">
+            <GridItem
+              title="It's Just A Calculator"
+              thumbnail="/calci.png"
+              href="https://calci.is-an.app/"
+            >
+              Calci
+            </GridItem>
+          </SimpleGrid>
         </Box>
       </Layout>
     </MainLayout>

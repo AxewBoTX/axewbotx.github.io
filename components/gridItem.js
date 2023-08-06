@@ -6,15 +6,18 @@ function GridItem({ children, href, thumbnail, title }) {
       <LinkBox cursor="pointer">
         <Image
           alt={title}
+          height="150px"
           placeholder="blue"
           loading="lazy"
           borderRadius="12px"
           src={thumbnail}
         />
         <LinkOverlay href={href} target="_blank">
-          <Text mt={2}>{title}</Text>
+          <Text mt={2} fontSize="22">
+            {children}
+          </Text>
         </LinkOverlay>
-        <Text fontSize="14">{children}</Text>
+        <Text>{title}</Text>
       </LinkBox>
     </Box>
   );
