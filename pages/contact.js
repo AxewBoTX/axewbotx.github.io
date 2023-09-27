@@ -55,12 +55,6 @@ function Contact() {
               href="https://discord.com/invite/pTzFSvCYp2"
               colorScheme="blue"
             />
-            <SocialButton
-              text="Facebook"
-              icon={<FaFacebook />}
-              href="https://www.facebook.com/axewslivingroom/"
-              colorScheme="facebook"
-            />
           </Stack>
         </Container>
       </Layout>
