@@ -22,6 +22,13 @@ function Works() {
             >
               Calci
             </GridItem>
+            <GridItem
+              title="Better Social Life"
+              thumbnail="/socio.png"
+              href="https://socio-web.netlify.app/"
+            >
+              Socio
+            </GridItem>
           </SimpleGrid>
         </Box>
       </Layout>
