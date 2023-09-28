@@ -26,10 +26,10 @@ function Contact() {
           </Text>
           <Stack direction="column" align="center" gap="18px" mt="80px">
             <SocialButton
-              text="YouTube"
-              icon={<FaYoutube />}
-              href="https://www.youtube.com/channel/UCrs-_MTVpZB3hAcMu3PCW2w"
-              colorScheme="red"
+              text="GitHub"
+              icon={<FaGithub />}
+              href="https://github.com/AxewBoTX"
+              colorScheme="gray"
             />
             <SocialButton
               text="Twitter"
@@ -38,22 +38,22 @@ function Contact() {
               colorScheme="twitter"
             />
             <SocialButton
-              text="Twitch"
-              icon={<FaTwitch />}
-              href="https://www.twitch.tv/axewbotx"
-              colorScheme="purple"
-            />
-            <SocialButton
-              text="GitHub"
-              icon={<FaGithub />}
-              href="https://github.com/AxewBoTX"
-              colorScheme="gray"
-            />
-            <SocialButton
               text="Discord"
               icon={<FaDiscord />}
               href="https://discord.com/invite/pTzFSvCYp2"
               colorScheme="blue"
+            />
+            <SocialButton
+              text="YouTube"
+              icon={<FaYoutube />}
+              href="https://www.youtube.com/@AxewBoTX"
+              colorScheme="red"
+            />
+            <SocialButton
+              text="Twitch"
+              icon={<FaTwitch />}
+              href="https://www.twitch.tv/axewbotx"
+              colorScheme="purple"
             />
           </Stack>
         </Container>

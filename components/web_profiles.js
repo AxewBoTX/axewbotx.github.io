@@ -60,6 +60,18 @@ function WebProfiles() {
         mt="20px"
       >
         <ProfileButton
+          link="https://github.com/AxewBoTX"
+          backg={github_bg}
+          text={"AxewBoTX"}
+          icon={<FaGithub size={35} />}
+        />
+        <ProfileButton
+          link="https://twitter.com/AxewBoTX"
+          backg={twitter_bg}
+          text={"@AxewBoTX"}
+          icon={<FaTwitter size={35} />}
+        />
+        <ProfileButton
           link="https://www.youtube.com/@AxewBoTX"
           backg={yt_bg}
           text={"Axew TV"}
@@ -70,18 +82,6 @@ function WebProfiles() {
           backg={twitch_bg}
           text={"@axewbotx"}
           icon={<FaTwitch size={35} />}
-        />
-        <ProfileButton
-          link="https://twitter.com/AxewBoTX"
-          backg={twitter_bg}
-          text={"@AxewBoTX"}
-          icon={<FaTwitter size={35} />}
-        />
-        <ProfileButton
-          link="https://github.com/AxewBoTX"
-          backg={github_bg}
-          text={"AxewBoTX"}
-          icon={<FaGithub size={35} />}
         />
       </Flex>
     </Box>
