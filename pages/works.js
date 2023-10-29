@@ -8,13 +8,20 @@ function Works() {
   return (
     <MainLayout>
       <Layout>
-        <Box>
+        <Box mb="60px">
           <Section delay={0.1}>
             <Heading variant="section-title" textUnderlineOffset="8px">
               My Projects
             </Heading>
           </Section>
           <SimpleGrid columns={[1, 2, 2]} gap="6" mt="50px">
+            <GridItem
+              title="The only manager you will ever need"
+              thumbnail="https://raw.githubusercontent.com/AxewBoTX/dondu/main/static/dondu-project.png"
+              href="https://dondu.netlify.app/"
+            >
+              Dondu
+            </GridItem>
             <GridItem
               title="It's Just A Calculator"
               thumbnail="/calci.png"
