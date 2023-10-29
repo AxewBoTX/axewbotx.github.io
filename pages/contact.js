@@ -1,12 +1,5 @@
 import { Container, Text, Stack, Heading } from "@chakra-ui/react";
-import {
-  FaYoutube,
-  FaTwitter,
-  FaTwitch,
-  FaGithub,
-  FaDiscord,
-  FaFacebook,
-} from "react-icons/fa";
+import { FaYoutube, FaTwitter, FaTwitch, FaGithub } from "react-icons/fa";
 import SocialButton from "components/socialButton.js";
 import MainLayout from "/lib/main.js";
 import Section from "/components/section.js";
@@ -36,12 +29,6 @@ function Contact() {
               icon={<FaTwitter />}
               href="https://twitter.com/AxewBoTX"
               colorScheme="twitter"
-            />
-            <SocialButton
-              text="Discord"
-              icon={<FaDiscord />}
-              href="https://discord.com/invite/pTzFSvCYp2"
-              colorScheme="blue"
             />
             <SocialButton
               text="YouTube"

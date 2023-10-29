@@ -74,7 +74,7 @@ function WebProfiles() {
         <ProfileButton
           link="https://www.youtube.com/@AxewBoTX"
           backg={yt_bg}
-          text={"Axew TV"}
+          text={"Axew"}
           icon={<FaYoutube size={35} />}
         />
         <ProfileButton
