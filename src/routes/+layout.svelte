@@ -1,4 +1,5 @@
 <script>
+  export const prerender = true;
   import "@/app.css";
   import { onMount } from "svelte";
   import { AppTheme } from "@/lib/stores.js";
