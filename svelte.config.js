@@ -1,5 +1,5 @@
-import adapter from "@sveltejs/adapter-static";
-import { vitePreprocess } from "@sveltejs/kit/vite";
+import adapter from "@sveltejs/adapter-auto";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import path from "path";
 
 const config = {
@@ -7,9 +7,6 @@ const config = {
     adapter: adapter(),
     alias: {
       "@": path.resolve("./src"),
-    },
-    paths: {
-      base: process.argv.includes("dev") ? "" : process.env.BASE_PATH,
     },
   },
   preprocess: vitePreprocess(),
