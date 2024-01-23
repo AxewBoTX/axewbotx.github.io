@@ -4,7 +4,13 @@ import path from "path";
 
 const config = {
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      pages: "build",
+      assets: "build",
+      fallback: undefined,
+      precompress: false,
+      strict: true,
+    }),
     alias: {
       "@": path.resolve("./src"),
     },
