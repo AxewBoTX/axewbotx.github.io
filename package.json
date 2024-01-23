@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/adapter-static": "^3.0.1",
     "@sveltejs/kit": "^1.20.4",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
