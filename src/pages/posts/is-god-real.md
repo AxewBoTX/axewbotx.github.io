@@ -1,5 +1,6 @@
 ---
 layout: "../../layouts/post_layout.astro"
+title: "Is God Real?"
 ---
 
 ### Hello World!
@@ -8,6 +9,17 @@ layout: "../../layouts/post_layout.astro"
 - Yeah it is crazy
 - Fuck this man
 
-```js
-console.log("Hello, World!");
+```go
+package main
+
+import (
+    "net/http"
+)
+
+func main(){
+    server := http.New()
+    server<-http.Listen(":8080")
+}
 ```
+
+This is super cool and I love this
