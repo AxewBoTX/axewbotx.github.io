@@ -1,24 +1,22 @@
-name: Deploy
+name: Deploy To Github Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: "main"
 
 jobs:
-  build:
-    name: Build
+  build_site:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Install NodeJS
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        uses: npm install
 
       - name: Build project
         run: npm run build
@@ -26,14 +24,19 @@ jobs:
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
-          name: production-files
           path: ./dist
 
   deploy:
-    name: Deploy
-    needs: build
+    name: Deploy Project
+    needs: build_site
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Download artifact
