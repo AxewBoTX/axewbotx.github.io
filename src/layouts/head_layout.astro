@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/fira-code";
 import Navbar from "../components/navbar.astro";
 const { title = "Axew's Living Room", description = "Axew's Living Room" } =
   Astro.props;
@@ -18,3 +19,9 @@ const { title = "Axew's Living Room", description = "Axew's Living Room" } =
     <slot />
   </body>
 </html>
+
+<style>
+  body {
+    font-family: "Fira Code Variable", sans-serif;
+  }
+</style>
