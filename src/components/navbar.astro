@@ -2,10 +2,37 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="sticky top-0 left-0 right-0 p-3 flex items-center justify-end">
-  <label class="swap swap-rotate">
-    <input type="checkbox" class="theme-controller" value="light" />
-    <Icon class="swap-on" size={30} name="ph:moon-bold" />
-    <Icon class="swap-off" size={30} name="ph:sun-bold" />
-  </label>
+<div
+  class="sticky top-0 left-0 right-0 p-3 flex items-center justify-center backdrop-blur shadow-lg md:shadow-none"
+>
+  <div
+    class="flex items-center justify-end md:justify-between w-full max-w-[1000px]"
+  >
+    <div class="hidden md:flex items-center text-3xl gap-[25px]">
+      <a href="/" class="hover:link">Home</a>
+      <a href="/posts" class="hover:link">Posts</a>
+    </div>
+    <div class="flex items-center justify-end gap-[15px]">
+      <label
+        class="swap swap-rotate"
+        data-toggle-theme="light"
+        data-act-class="swap-active"
+      >
+        <Icon class="swap-on" size={30} name="ph:moon-bold" />
+        <Icon class="swap-off" size={30} name="ph:sun-bold" />
+      </label>
+      <div class="dropdown dropdown-left md:hidden">
+        <div tabindex="0" role="button">
+          <Icon size={30} name="ic:round-menu" />
+        </div>
+        <ul
+          tabindex="0"
+          class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52 text-lg"
+        >
+          <li><a href="/" class="hover:link">Home</a></li>
+          <li><a href="/posts" class="hover:link">Posts</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
