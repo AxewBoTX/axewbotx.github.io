@@ -1,7 +1,25 @@
 ---
 import HeadLayout from "../../layouts/head_layout.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../lib/utils.js";
+
+// get post collection sorted by date
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 ---
 
 <HeadLayout>
-  <h1 class="text-2xl">Posts Page</h1>
+  <div class="flex flex-col">
+    {
+      posts.map((post) => {
+        return (
+          <a href={`/posts/${post.slug}`}>
+            <p>Title: {post.data.title}</p>
+            <p>Date: {formatDate(post.data.date)}</p>
+          </a>
+        );
+      })
+    }
+  </div>
 </HeadLayout>
