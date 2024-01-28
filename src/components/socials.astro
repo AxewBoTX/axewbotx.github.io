@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+const socials = [
+  { name: "Github", href: "https://github.com/axewbotx" },
+  { name: "Twitter", href: "https://twitter.com/axewbotx" },
+  { name: "Discord", href: "https://discord.com/users/757816994178531369" },
+  { name: "Twitch", href: "https://twitch.tv/axewbotx" },
+];
+---
+
+<div class="max-w-[350px] w-full mt-[25px]">
+  <p class="text-2xl flex items-center gap-[5px] justify-center">
+    you can find me on
+    <Icon size={25} name="ph:arrow-down" />
+  </p>
+  <div class="flex flex-col gap-[5px] mt-[5px] max-w-[300px] items-center">
+    {
+      socials.map((social) => {
+        return (
+          <div class="flex gap-[10px] justify-start w-full max-w-[150px]">
+            <Icon size={25} name={`ph:${social.name.toLowerCase()}-logo`} />
+            <a href={social.href} class="text-xl link italic" target="_blank">
+              {social.name}
+            </a>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
