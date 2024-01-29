@@ -8,12 +8,14 @@ const socials = [
 ];
 ---
 
-<div class="max-w-[350px] w-full mt-[25px]">
+<div class="max-w-[350px] md:max-w-[600px] w-full mt-[25px] lg:mt-[30px]">
   <p class="text-2xl flex items-center gap-[5px] justify-center">
     you can find me on
-    <Icon size={25} name="ph:arrow-down" />
+    <Icon size={25} name="ph:chat-circle-text" />
   </p>
-  <div class="flex flex-col gap-[5px] mt-[5px] max-w-[300px] items-center">
+  <div
+    class="flex flex-col md:flex-row md:justify-center md:mt-[15px] gap-[5px] md:gap-[15px] mt-[5px] max-w-[300px] md:max-w-[700px] items-center"
+  >
     {
       socials.map((social) => {
         return (
