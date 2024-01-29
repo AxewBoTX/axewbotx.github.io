@@ -19,31 +19,8 @@ function formatString(input) {
 }
 ---
 
-<script>
-  const form = document.getElementById("searchInputForm");
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const searchInput = formData.get("searchInput")?.toString();
-    if (!searchInput || searchInput.trim().length === 0) return;
-    const url = new URL("/posts", window.location.origin);
-    url.searchParams.set("q", searchInput);
-    window.location.assign(url.toString());
-  });
-</script>
-
 <HeadLayout>
   <div class="flex flex-col items-center m-auto p-3 max-w-[900px]">
-    <form class="w-full flex justify-end mt-[20px] join" id="searchInputForm">
-      <input
-        class="input input-bordered join-item"
-        placeholder="Search"
-        name="searchInput"
-      />
-      <button type="submit" class="btn join-item">
-        <Icon name="ph:github-logo" size={30} />
-      </button>
-    </form>
     <div class="flex flex-col mt-[20px] gap-[10px] w-full max-w-[600px]">
       {
         posts.map((post) => {
