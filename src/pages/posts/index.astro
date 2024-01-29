@@ -1,6 +1,5 @@
 ---
 import HeadLayout from "../../layouts/head_layout.astro";
-import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { formatDate } from "../../lib/utils.js";
 
@@ -10,7 +9,7 @@ const posts = (await getCollection("posts")).sort(
 );
 
 function formatString(input) {
-  const maxLen = 25;
+  const maxLen = 30;
   if (input.length <= maxLen) {
     return input;
   } else {
@@ -21,7 +20,7 @@ function formatString(input) {
 
 <HeadLayout>
   <div class="flex flex-col items-center m-auto p-3 max-w-[900px]">
-    <div class="flex flex-col mt-[20px] gap-[10px] w-full max-w-[600px]">
+    <div class="flex flex-col mt-[20px] gap-[35px] w-full max-w-[700px]">
       {
         posts.map((post) => {
           return (
@@ -30,7 +29,7 @@ function formatString(input) {
               href={`/posts/${post.slug}`}
             >
               <div class="tooltip" data-tip={`${post.data.title}`}>
-                <p class="text-xl">{formatString(post.data.title)}</p>
+                <p class="text-xl text-left">{formatString(post.data.title)}</p>
               </div>
               <p>{formatDate(post.data.date)}</p>
             </a>
