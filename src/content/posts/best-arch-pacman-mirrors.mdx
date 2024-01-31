@@ -1,0 +1,27 @@
+---
+title: "How to get the best Arch linux pacman mirrors"
+date: 2024-01-31
+slug: best-arch-pacman-mirrors
+---
+
+# How to get the best Arch linux pacman mirrors
+Arch linux is pretty great, but sometimes it can be really annoying. <br/>
+Many times after installing arch linux, and even doing everything perfectly, `pacman` may result with very slow download and upload speeds.<br/>
+
+We can easily fix this issue by using the [rate-mirrors](https://github.com/westandskif/rate-mirrors) package. It is a simple program that finds the fastest pacman mirrors for arch linux.
+
+You can install that package using the AUR helper [yay](https://github.com/Jguer/yay)
+```sh
+yay -S rate-mirrors
+```
+This will install the rate-mirrors program onto your system and now you can use it easily.
+
+If you just want the list of best pacman mirrors you can get that by 
+```sh
+rate-mirrors arch
+```
+
+But if you want to get the list of pacman mirrors and also apply them to your pacman, you can run
+```sh
+rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist
+```
