@@ -1,0 +1,254 @@
+---
+title: "How to make a TCP Client and Server CLI chat app in Golang"
+date: 2024-02-07
+slug: golang-tcp-client-server-cli-chat
+---
+
+# How to make a TCP Client and Server CLI chat app in Golang
+TCP/IP protocol suite consists of a collection of protocols and standards that govern how data is transmitted and received across networks.<br/>
+
+In this post I'm going to show how you can create a simple TCP Client and Server based CLI chat app in Golang.
+> This will require you to have somewhat good knowledge of concurrency and channels in golang.
+
+## Program Structure
+![Program Structure Diagram](/post-src/golang-tcp-client-server_1.png)
+Above diagram shows how the data flows through various parts of our program.
+
+## Server
+First of all we are gonna need a server. In golang it is pretty easy to make TCP server by using the [net](https://pkg.go.dev/net) package.
+```go
+func main(){
+	server,server_err := net.Listen("tcp","localhost:8080")
+	if server_err != nil{
+		log.Fatal(server_err)
+	}
+	defer func(){
+		server.Close()
+	}()
+
+	log.Println("Server running on localhost:8080")
+}
+```
+Above code simply starts a TCP server and prints **Server running on localhost:8080**, but if you run this code now you will see that nothing happens and the program closes instantly.
+
+That is because right now we are just starting the server and not actually listening for the incoming connections.
+
+We can implement that very simply by using the following code after printing about the running server
+```go
+for {
+	conn, conn_err := server.Accept()
+	if conn_err != nil{
+		log.Println(conn_err)
+	}
+	go handleConnection(conn)
+}
+```
+
+The above code runs a loop that constantly listens to the incoming connections and spawns goroutins for handing those connections. Now you may be able to see that we are using a `handleConnection()` function that we havn't yet defined.
+
+This function just handles the data and control flow of the connection. Let's define it.
+```go
+func handleconnection(conn net.Conn){
+	client_addr := conn.RemoteAddr().String()
+	log.Println(client_addr+" joined the server")
+	defer func(){
+		log.Println(client_addr+" left the server")
+		conn.Close()
+	}()
+}
+```
+
+The above code don't really do anything other than just logging when client joines or leaves the server. In this function we can define how our server will read incoming data from the client.
+
+First we should have a way to keep track of all the clients that are connected to our server. So above the main function add the following code
+```go
+var clients = make(map[string]net.Conn)
+```
+
+Now let's implement how our server can read data from the client.
+```go
+func handleconnection(conn net.Conn){
+	client_addr := conn.RemoteAddr().String()
+	clients[client_addr] = conn
+	log.Println(client_addr+" joined the server")
+
+	go func(){
+		scanner := bufio.NewScanner(conn)
+		for scanner.Scan(){
+			log.Println(client_addr+": ",scanner.Text())
+		}
+	}
+	delete(clients,client_addr)
+	log.Println(client_addr+" left the server")
+	defer func(){
+		conn.Close()
+	}()
+}
+```
+
+So far we have added the functionality for listening to incomming connections, log join and leave messages, read and print data coming from the client.
+
+But there is still one thing left to implement in the server, that is broadcasting messages to all clients. Right now whenever we read data from a client, that data is just printed on the server and none of the clients get that data.
+
+In order to fix this we can use [golang channels](https://go.dev/tour/concurrency/2). Channels act like a pipe through which various **goroutines** can send data to one another.
+
+We can define a `manageConnections()` function in order to manage various connections and also act as a broadcaster.<br/>
+Before that we just need to define a few other things.
+After we declare the clients map, add the following code
+```go
+type Message struct {
+	Client net.Conn
+	Body   string
+}
+
+func NewMessage(conn net.Conn, body string) *Message {
+	return &Message{Client: conn, Body: body}
+}
+
+var message = make(chan Message)
+```
+Above code creates a `Message` struct, gives us a way to easily create those messages and also declares a channel with the data type of that Message struct.<br/>
+Now we can read and write messages to that channel through goroutines.
+
+Now that we are done preparing, let's define the `manageConnections()` function
+```go
+func manageConnections() {
+	for {
+		select {
+		case data := <-message:
+			for _, client := range clients {
+				if data.Client.RemoteAddr().String() != client.RemoteAddr().String() {
+					if _, err := client.Write([]byte(data.Body)); err != nil {
+						fmt.Println(err)
+					}
+				}
+			}
+			fmt.Println(data.Body)
+		}
+	}
+}
+```
+Above code continuously checks if there is any data sent into the message channel that we created. If there is any message sent into that chnnel, then the function loops over all the clients currently connected to the server and sends that message to all of them except the one that sent that message and also logs those messages to the server console.
+
+Now in order for this function to work properly we need to run this in a seprate goroutine, in the main function before we run the connection accept loop, you can add the following code
+```go
+go manageConnections()
+
+for {
+	conn, conn_err := server.Accept()
+	if conn_err != nil{
+		log.Println(conn_err)
+	}
+	go handleConnection(conn)
+}
+```
+
+Now we can instead of just logging the messages to server console we can also broadcast them using the messages channel. Let's use that.
+```go
+func handleconnection(conn net.Conn){
+	client_addr := conn.RemoteAddr().String()
+	clients[client_addr] = conn
+
+	message <- *NewMessage(conn, client_addr + " has joined the server!")
+
+	go func(){
+		scanner := bufio.NewScanner(conn)
+		for scanner.Scan(){
+			message <- *NewMessage(conn,client_addr + ": " + scanner.Text())
+		}
+		delete(clients,client_addr)
+		message <- *NewMessage(conn, client_addr + " has left the server!")
+		defer func(){
+			conn.Close()
+		}()
+	}
+}
+```
+
+The above code creates Message structs for the message and sends them to message channel which are then broadcasted onto all the other clients.
+
+At the end the server file may look something like this
+```go
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"net"
+)
+
+type Message struct {
+	Client net.Conn
+	Body   string
+}
+
+func NewMessage(conn net.Conn, body string) *Message {
+	return &Message{Client: conn, Body: body}
+}
+
+var message = make(chan Message)
+
+func main(){
+	server,server_err := net.Listen("tcp","localhost:8080")
+	if server_err != nil{
+		log.Fatal(server_err)
+	}
+
+	defer func(){
+		server.Close()
+	}()
+
+	go manageConnections()
+
+	for { // continuously listening for connections
+		conn, conn_err := server.Accept()
+		if conn_err != nil{
+			log.Println(conn_err)
+		}
+		go handleConnection(conn)
+	}
+}
+
+// handle individual connections
+func handleconnection(conn net.Conn){
+	client_addr := conn.RemoteAddr().String()
+	clients[client_addr] = conn
+
+	message <- *NewMessage(conn, client_addr + " has joined the server!")
+
+	go func(){
+		scanner := bufio.NewScanner(conn) // read data from the client
+		for scanner.Scan(){
+			message <- *NewMessage(conn,client_addr + ": " + scanner.Text())
+		}
+		delete(clients,client_addr)
+		message <- *NewMessage(conn, client_addr + " has left the server!")
+		defer func(){
+			conn.Close()
+		}()
+	}
+}
+
+// message broadcaster
+func manageConnections() {
+	for {
+		select {
+		case data := <-message:
+			for _, client := range clients {
+				if data.Client.RemoteAddr().String() != client.RemoteAddr().String() {
+					// write data to the client
+					if _, err := client.Write([]byte(data.Body)); err != nil {
+						fmt.Println(err)
+					}
+				}
+			}
+			fmt.Println(data.Body)
+		}
+	}
+}
+```
+
+## Client
+We are totally done with all the server side work and now the only thing left is a simple TCP Client in golang.
+> You don't actually need to write a TCP client in golang to test the server, you can just use a TCP testing client like [telnet](https://www.youtube.com/watch?v=eGUaO3nRgz8) too. We are just writing a client as a small exercise.
