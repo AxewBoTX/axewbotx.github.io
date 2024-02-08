@@ -252,3 +252,46 @@ func manageConnections() {
 ## Client
 We are totally done with all the server side work and now the only thing left is a simple TCP Client in golang.
 > You don't actually need to write a TCP client in golang to test the server, you can just use a TCP testing client like [telnet](https://www.youtube.com/watch?v=eGUaO3nRgz8) too. We are just writing a client as a small exercise.
+
+Making a client is pretty simple you just need to send data to the server from the standard input and send data from the server to the standard output.
+
+```go
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"net"
+	"os"
+)
+
+func main() {
+	conn, conn_err := net.Dial("tcp", "localhost:8080")
+	if conn_err != nil {
+		log.Fatal(conn_err)
+	}
+	defer conn.Close()
+
+	go getData(conn)
+
+	scanner := bufio.NewScanner(os.Stdin) // Write Loop
+	for scanner.Scan() {
+		if _, send_err := conn.Write([]byte(scanner.Text() + "\n")); send_err != nil {
+			log.Println(send_err)
+			return
+		}
+	}
+}
+
+func getData(conn net.Conn) { // Read Loop
+	for {
+		read_buff := make([]byte, 2048)
+		if _, read_err := conn.Read(read_buff); read_err != nil {
+			log.Fatal(read_err)
+		}
+		fmt.Printf("-> %s\n", read_buff)
+	}
+}
+```
+In the above code, the main funciton firstly dials a connection to the server, then spawns a simple ReadLoop goroutine to read the incoming data from the server. Then it runs a write loop to which takes the user input and send it over to the server.
