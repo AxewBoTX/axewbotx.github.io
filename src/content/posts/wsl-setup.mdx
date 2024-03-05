@@ -1,0 +1,83 @@
+---
+title: "How to setup WSL2 from scratch"
+date: 2024-03-05
+slug: wsl-setup
+---
+
+# How to setup WSL2 from scratch
+
+In this post im going to show you can easily setup [WSL2(Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/about) from scratch on your Windows machine.<br/>
+Linux is the best tool for every productivity and work related thing, but when you just want to sit back and play some games, linux can be a bit horrifying. <br/>
+WSL offers you a way to use the power of both worlds together in your own computer.
+
+## Setting Up WSL2
+
+1. Open **Turn Windows Features on or off**
+2. A dialog box will open, turn on **Virtual Machine Platform** and **Windows Subsystem For Linux** and click Ok.
+3. Restart your computer.
+5. Install [wsl2kernel](https://aka.ms/wsl2kernel)
+6. Restart Your Computer
+
+Now that you have installed WSL we are ready to move onto the linux distro part.
+
+## Installing Distro on Windows System Drive
+
+This is the easy way. You can just install most of the distro from the Microsoft Store.<br/>
+If your preferred distro is not on the Microsoft Store, then you can just search about that on google and you are sure to find it.
+
+## Installing Distro on Custom Location
+
+If you have want to install WSL distro on any other hard drive than the System Drive, then you can follow the steps below.
+
+1. Make a folder called **WSL** in whichever directory you want.
+2. Make a another folder and name it to the name of distro that you want to install.
+3. Go to [this](https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions) page and download whichever distro you want.
+4. Extract the downloaded file. You will see many files, just extract the the file with **x64** in its name into a new folder.
+5. Make sure there is a .tar.gz file in that folder.
+6. Run the Following command to install WSL on that drive:-
+	```sh
+	wsl --import Name_For_Distro "/location/where/you/want/to/install/it" "path/to/.tar.gz/file"
+	```
+7. Run the command below to start WSL
+	```sh
+	wsl -d Name_For_Distro
+	```
+
+You have successfully installed a linux distro onto a custom location in WSL.
+
+## Arch Linux On WSL2
+
+Arch linux is one of the most amazing linux distro ever. But it can be a little bit hard to install and setup, but on WSL it is pretty straight forward.
+
+First we need to download the Arch WSL `.tar file`. You can download it from [yuk7/ArchWSL](https://github.com/yuk7/ArchWSL) repo and follow this post to install it anywhere you like.
+
+> For Arch prefer installing it in a custom location, for some reason it can cause a few annoying errors if you install it on default location.
+
+After installing ArchWSL onto WSL, just follow the steps below to set it up.
+
+1. We need to setup a main user for the WSL distro. Run the command below to enter the user config file.
+	```sh
+	EDITOR=vim visudo
+	```
+2. Now uncomment the following line
+	```
+	%wheel ALL=(ALL:ALL) NOPASSWD: ALL
+	```
+3. Now run below command to add the user to wheel group that we just configured.
+	```sh
+	useradd -m -G wheel {user}
+	```
+4. Now exit Arch from WSL using `exit` command enter again via below command
+	```sh
+	wsl -u {user} -d Name_For_Distro
+	```
+5. Run the below command to setup keyring, append all the necessary keys to the keyring and finish the keyring setup.
+	```sh
+	sudo pacman-key --init && sudo pacman-key --populate && sudo pacman -S archlinux-keyring
+	```
+6. Make sure to upgrade the whole system by running
+	```sh
+	sudo pacman -Syyu
+	```
+
+Now you can use Arch linux on WSL as you please.
