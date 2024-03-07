@@ -1,0 +1,52 @@
+---
+title: "How to setup eslint for a Svelte Prettier project"
+date: 2024-03-08
+slug: eslint-svelte-prettier
+---
+
+# How to setup eslint for a Svelte Prettier project
+
+[ESLint](https://eslint.org/) is an open source project that statically analyzes your code to quickly find problems.<br/>
+You can easily integrate a code formatter like [Prettier](https://prettier.io/) into your eslint config too.
+
+Firstly you need to install required packages for your eslint setup
+> You can use any package manager you like, I am using [Bun](https://bun.sh/)
+```sh
+bun add -D eslint eslint-plugin-svelte eslint-plugin-prettier eslint-config-prettier prettier prettier-plugin-svelte
+```
+
+## ESLint Setup
+
+Create a `.eslintrc.json` file in your project root.<br/>
+Now just put the following code inside that file
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:svelte/recommended", "prettier"],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": "off"
+  }
+}
+```
+
+Now that we have setup eslint, we can move onto configuring prettier.
+
+## Prettier Setup
+
+Create a `.prettierrc.json` file in your project root and put the following code in that file
+```json
+{
+  "plugins": ["prettier-plugin-svelte"]
+}
+```
+
+We have successfully setup ESLint along with Prettier for a basic Svelte project.
