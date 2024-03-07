@@ -1,0 +1,21 @@
+---
+title: "Redirecting in SvelteKit"
+date: 2024-03-07
+slug: redirecting-in-SvelteKit 
+---
+
+# How to properly redirect to pages in SvelteKit
+
+[Redirecting](https://learn.svelte.dev/tutorial/redirects) means navigating from one route to another route programatically in both SSR and CSR.<br/>
+SvelteKit provides a very easy way to do so. You can just use the following code snippet whenever you want to redirect the end user to some route:-
+
+```js
+throw redirect(STATUS_CODE, ROUTE);
+```
+
+Here, `ROUTE` is the URL to which you want to redirect the user and `STATUS_CODE` is a special code that performs a specific function while redirecting.<br/>
+A few of the status codes are given below:-
+
+- 303 -> For form actions, following a successfull submission
+- 307 -> For temporary redirects
+- 308 -> For permanent redirects
