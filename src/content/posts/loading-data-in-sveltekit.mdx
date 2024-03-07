@@ -1,0 +1,65 @@
+---
+title: "Loading data in SvelteKit"
+date: 2024-03-07
+slug: loading-data-in-sveltekit
+---
+
+# How to load data in SvelteKit
+
+There are various ways of [loading data](https://kit.svelte.dev/docs/load) in SvelteKit but the best and most popular is using the `load` functions in `+page.js` or `+page.serve.js` file.<br/>
+Just follow the steps given below:-
+
+1. Create a `+page.server.js` or `+page.js` file in the route folder for which you want to load data.
+2. Add the follow code in it:-
+
+   ```js
+   export const load = async (event) => {
+     return {};
+   };
+   ```
+
+   This functions runs everytime the page loads and hence the data via this functions is provided to the page everytime it loads.<br/>
+   You can fetch and then return any type of data inside this function.
+
+3. The data that is returned in the `load` functions can be accessed from `+page.svelte` file by using the following code snippet:-
+
+   ```svelte
+   <script>
+   export let data;
+   </script>
+   ```
+
+   From here you can use that `data` on the frontend in whichever way you want to use it.
+
+4. You can also [Stream With Data](https://svelte.dev/blog/streaming-snapshots-sveltekit) in order to display some kind of loading UI or skeleton loading while fetching data for your page.
+
+5. While returning data in `load` function you can use the following code snippet to stream data:-
+
+	```js
+	export const load = async (event) => {
+		async function getSomeData() {
+			return someData;
+		}
+		return {
+			streamed:{
+				someData: getSomeData()
+			}
+		};
+	};
+	```
+
+   The `streamed.someData` here can be awaited on the frontend in order to show some kind of loading UI.
+
+6. You can use the following code snippet to utilize this `streamed.someData` on the frontend:-
+
+   ```svelte
+   <script>
+   export let data;
+   </script>
+
+   {#await data.streamed.someData}
+       <div>...LoadingUI...</div>
+   {:then someData}
+       <div>...Final UI</div>
+   {/await}
+   ```
