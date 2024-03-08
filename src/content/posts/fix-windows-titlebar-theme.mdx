@@ -10,12 +10,15 @@ I think anyone who has used Windows 10 or 11 can agree that sometimes while usin
 Even your entire desktop has been in dark mode since you can remember, but suddenly your titlebar is in light mode. It's really really annoying. You can easily fix it.
 
 1. Go to color settings and turn off the "Show Accent Color On Title Bars And Window Borders" option.
-2. Open "Registory Editor".
-3. Open 'Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM'
-4. Open 'AccentColor' and set the value to 'ec000000' and save it.
-5. Create Or Open `DWORD(32-bit)` key 'AccentColorInactive' and set the value to ec000000
-6. Open 'ColorPrevalence' and set the value to 1 and save it.
-7. Open 'EnableWindowsColorization' and set the value to 0.
+2. Open `Registory Editor`.
+3. Open the following
+	```
+	Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM
+	```
+4. Open `AccentColor` and set the value to `ec000000` and save it.
+5. Create Or Open `DWORD(32-bit)` key `AccentColorInactive` and set the value to `ec000000`
+6. Open `ColorPrevalence` and set the value to 1 and save it.
+7. Open `EnableWindowsColorization` and set the value to 0.
 
 After doing the above steps, you might have noticed that you already have a pure black title bar.
 >If it still don't work, all you need to do is just restart your computer.
