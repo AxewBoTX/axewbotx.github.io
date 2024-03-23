@@ -129,7 +129,13 @@ echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
 	```
 4. You can install [bun](https://bun.sh) using the following command
 	```sh
-	curl -fsSL https://bun.sh/install | bash
+	mise install bun && \
+	mise use -g bun
+	```
+5. You can install [golang](https://go.dev/) using the command below
+	```sh
+	mise install go && \
+	mise use -g go
 	```
 5. Run the following to install [deno](https://deno.com/)
 	```sh
@@ -163,6 +169,10 @@ You can install it using the following command:-
 ```sh
 sudo pacman -S neovim
 ```
+You also need to install [lazygit](https://github.com/jesseduffield/lazygit) for [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) plugin to work.
+```sh
+sudo pacman -S lazygit
+```
 Now you just need to run neovim and it will install everything automatically.<br/>
 >NOTE: It may take some time for it to install things so have some patience.
 
@@ -170,6 +180,6 @@ Now you just need to run neovim and it will install everything automatically.<br
 
 There are various rice related packages that you need to install. Just the following command to install them
 ```sh
-sudo pacman -S rofi ripgrep i3-gaps feh picom neofetch cmatrix polybar alacritty
+sudo pacman -S rofi ripgrep i3-gaps feh picom neofetch cmatrix polybar alacritty redshift
 ```
 You have finally riced Arch Linux.
