@@ -18,13 +18,18 @@ Before we do anything, we need to setup our shell.<br/>
 	sudo pacman -S zsh && \
 	chsh
 	```
-2. You can install the needed packages by running the following command
+2. You can install the needed packages by running the following commands
 	```sh
-	sudo pacman -S exa fd fzf && \
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k && \
-	echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc && \
+	sudo pacman -S exa fd fzf
+	```
+	```sh
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	```
+	```sh
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	```
+	```sh
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 	```
 3. Now you need to clone my dotfiles repo and copy everything from there to the `~/.config` folder.
 4. Then run the following command to get the pre-setup `.zshrc` into your home directory
@@ -182,4 +187,8 @@ There are various rice related packages that you need to install. Just the follo
 ```sh
 sudo pacman -S rofi ripgrep i3-gaps feh picom neofetch cmatrix polybar alacritty redshift
 ```
+
+## Other Stuff
+- You can find my wallpapers [here](https://drive.google.com/drive/folders/1o1qjRgkJtnF_8uGB1z6MRsQUjWinHUsw)
+
 You have finally riced Arch Linux.
