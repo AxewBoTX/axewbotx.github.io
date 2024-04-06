@@ -119,33 +119,20 @@ echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
 
 ## Web Technologies
 
-1. You can install [nodejs](https://nodejs.org/en) using the following command
-	```sh
-	mise install node && \
-	mise use -g node
-	```
-2. You can install [yarn](https://yarnpkg.com/) using the command below
+You can install most of the web technologies like [nodejs](https://nodejs.org/en), [bun](https://bun.sh),
+[golang](https://go.dev/), [deno](https://deno.com/), [zig](https://ziglang.org/) by using mise. Just run the following command
+```sh
+mise install node bun go deno zig
+mise use -g node bun go deno zig
+```
+
+- You can install [yarn](https://yarnpkg.com/) using the command below
 	```sh
 	npm install -g yarn
 	```
-3. You can install [live-server](https://www.npmjs.com/package/live-server) using the followint command
+- You can install [live-server](https://www.npmjs.com/package/live-server) using the followint command
 	```sh
 	npm install -g live-server
-	```
-4. You can install [bun](https://bun.sh) using the following command
-	```sh
-	mise install bun && \
-	mise use -g bun
-	```
-5. You can install [golang](https://go.dev/) using the command below
-	```sh
-	mise install go && \
-	mise use -g go
-	```
-5. Run the following to install [deno](https://deno.com/)
-	```sh
-	mise install deno && \
-	mise use -g deno
 	```
 
 ## Java
