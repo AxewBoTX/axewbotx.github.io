@@ -10,17 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^2.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/fira-code": "^5.0.16",
-    "@iconify-json/ic": "^1.1.17",
     "astro": "^4.2.4",
-    "astro-icon": "^1.0.2",
-    "dompurify": "^3.0.8",
     "tailwindcss": "^3.4.1",
-    "@iconify-json/ph": "^1.1.10",
-    "daisyui": "^4.6.0",
-    "@tailwindcss/typography": "^0.5.10"
+    "daisyui": "^4.6.0"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

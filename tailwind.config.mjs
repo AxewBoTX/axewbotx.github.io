@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
@@ -18,17 +18,6 @@ export default {
           success: "#45d3c0",
           warning: "#f8cf68",
           error: "#f53848",
-        },
-        light: {
-          primary: "#50e0c8",
-          secondary: "#f49cd5",
-          accent: "#cd8fea",
-          neutral: "#202020",
-          "base-100": "#f6f2f8",
-          info: "#92a7e7",
-          success: "#73deaf",
-          warning: "#e2aa03",
-          error: "#f36d93",
         },
       },
     ],

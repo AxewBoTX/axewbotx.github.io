@@ -1,21 +1,10 @@
 ---
 import HeadLayout from "../layouts/head_layout.astro";
 import Profile from "../components/profile.astro";
-import Socials from "../components/socials.astro";
 ---
 
 <HeadLayout>
-  <div
-    class="lg:mt-[100px] sm:mt-[80px] mt-[60px] flex flex-col items-center p-3 gap-[20px]"
-  >
+  <div class="mt-[100px] flex flex-col items-center p-3 gap-[20px]">
     <Profile />
-    <p class="max-w-[380px] text-center">
-      - just an average highshool student with a passion for programming and
-      learning new technology.
-    </p>
-    <Socials />
-    <p class="text-lg mt-[25px] md:mt-[40px]">
-      Check out my <a href="/posts" class="link">blog posts<a></a>.</a>
-    </p>
   </div>
 </HeadLayout>
