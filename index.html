@@ -1,0 +1,112 @@
+<!doctype html>
+<html
+  lang="en"
+  class="dark uk-theme-axew uk-radii-md uk-shadows-md uk-font-sm uk-chart-default"
+>
+  <head>
+    <title>Axew's Living Room</title>
+    <meta name="description" content="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/public/profile.ico" />
+    <meta property="og:title" content="Axew's Living Room" />
+    <meta property="og:description" content="Axew's Living Room" />
+    <meta property="og:image" content="/public/profile.png" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/franken-ui@2.0.0/dist/css/core.min.css"
+    />
+    <script
+      src="https://unpkg.com/franken-ui@2.0.0/dist/js/core.iife.js"
+      type="module"
+    ></script>
+    <script
+      src="https://unpkg.com/franken-ui@2.0.0/dist/js/icon.iife.js"
+      type="module"
+    ></script>
+  </head>
+  <body class="bg-background text-foreground">
+    <div
+      class="w-full flex items-center flex-col p-5 gap-[50px] mt-[50px] mb-[100px]"
+    >
+      <div class="flex items-center justify-center gap-[15px] py-3 px-4">
+        <img
+          class="rounded-full max-w-[80px] border"
+          src="/public/profile.png"
+          alt="Axew's Living Room"
+        />
+        <div class="flex flex-col">
+          <p class="text-4xl">Lovedeep Singh</p>
+          <a
+            class="text-lg uk-link text-primary hover:text-gray-500 transition-all w-fit"
+            target="_blank"
+            href="https://github.com/axewbotx"
+            >@axewbotx</a
+          >
+        </div>
+      </div>
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 gap-[20px] max-w-[1200px]"
+        id="project-list"
+      ></div>
+    </div>
+    <script>
+      const projects = [
+        {
+          name: "raesan",
+          description: "academic testing application",
+          image: "",
+          href: "https://raesan.pages.dev",
+        },
+        {
+          name: "tao",
+          description: "the absolute order",
+          image: "",
+          href: "https://github.com/axewbotx/tao",
+        },
+        {
+          name: "oro-jackson",
+          description: "just a pirate ship",
+          image: "",
+          href: "https://github.com/axewbotx/oro-jackson",
+        },
+        {
+          name: "alladin",
+          description: "it can download stuff",
+          image: "",
+          href: "https://github.com/axewbotx/alladin",
+        },
+        {
+          name: "browzer",
+          description: "web app in rust completely from scratch",
+          image: "",
+          href: "https://github.com/axewbotx/alladin",
+        },
+        {
+          name: "axewbotx.github.io",
+          description: "personal website",
+          image: "",
+          href: "https://github.com/axewbotx/axewbotx.github.io",
+        },
+        {
+          name: "quark",
+          description: "single executable chat app",
+          image: "",
+          href: "https://github.com/axewbotx/quark",
+        },
+      ];
+      for (let i = 0; i < projects.length; i++) {
+        document.getElementById("project-list").innerHTML += `
+			  <a class="uk-card uk-card-body hover:uk-card-secondary transition-all" href="${projects[i].href}" target="_blank">
+			  <h3 class="uk-card-title flex items-center justify-between">
+				  <p>${projects[i].name}</p>
+				  <span class="text-primary iconify mdi--link-variant w-[22px] h-[22px]"></span>
+			  </h3>
+			  <p class="mt-4">${projects[i].description}</p>
+			</a>
+		  `;
+      }
+    </script>
+  </body>
+</html>

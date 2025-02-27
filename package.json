@@ -1,28 +1,17 @@
 {
   "name": "axewbotx.github.io",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/fira-code": "^5.0.16",
-    "astro": "^4.2.4",
-    "tailwindcss": "^3.4.1",
-    "daisyui": "^4.6.0"
+    "dev": "tailwindcss -i ./tailwind.css -o ./public/style.css --minify --watch"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-astro": "^0.31.3",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.4",
-    "prettier-plugin-astro": "^0.13.0",
-    "typescript": "^5.3.3"
-  }
+    "franken-ui": "^2.0.0",
+    "postcss": "^8.5.3",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify/tailwind": "^1.2.0",
+    "@types/bun": "latest",
+    "tailwindcss": "v3"
+  },
+  "peerDependencies": {},
+  "dependencies": {}
 }
